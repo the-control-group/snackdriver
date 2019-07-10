@@ -18,7 +18,7 @@ module.exports = async config => {
 	logger.streams = [];
 	if (process.env.NODE_ENV === "production") {
 		// log to Stackdriver Logging
-		logger.streams.push(loggingBunyan.stream("info"));
+		logger.streams.push(loggingBunyan.stream(config.level));
 	} else {
 		logger.streams.push({
 			level: "info",
