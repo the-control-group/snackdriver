@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/the-control-group/snackdriver/issues"
   },
-  "homepage": "https://github.com/the-control-group/snackdriver#readme"
+  "homepage": "https://github.com/the-control-group/snackdriver#readme",
+  "dependencies": {
+    "@google-cloud/logging-bunyan": "^1.2.1",
+    "bunyan": "^1.8.12",
+    "bunyan-debug-stream": "^2.0.0"
+  }
 }
