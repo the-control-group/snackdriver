@@ -2,10 +2,16 @@
 
 A bite-sized bunyan logger with color and a built-in stackdriver stream.
 
-# Usage
+### Example:
 
-```
-(async() => {
+```javascript
+const Logger = require("./log")({
+	containerName: config.containerName,
+	version: config.version,
+	level: "info"
+});
+
+async () => {
 	const { log, log_mw } = await Logger;
 	app.use(log_mw);
 
@@ -20,5 +26,13 @@ A bite-sized bunyan logger with color and a built-in stackdriver stream.
 
 		next();
 	});
-})
+};
 ```
+
+**Console output:**  
+![alt text](console.png "Pretty huh?")
+
+And if your `NODE_ENV` is set to `production` it logs to stack driver.
+
+**Stackdriver output:**  
+![alt text](stackdriver.png "noice!")
