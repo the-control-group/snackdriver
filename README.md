@@ -6,7 +6,7 @@ A bite-sized bunyan logger with color and a built-in stackdriver stream.
 
 ### install:
 
-`npm install --save the-control-group/snackdriver`
+`npm install --save the-control-group/snackdriver#v0.0.3`
 
 ### example:
 
