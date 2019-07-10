@@ -1,0 +1,22 @@
+{
+  "name": "snackdriver",
+  "version": "0.0.1",
+  "description": "A bite-sized bunyan logger with color and a built-in stackdriver stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-control-group/snackdriver.git"
+  },
+  "keywords": [
+    "stackdriver"
+  ],
+  "author": "Nathan Cobb",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/the-control-group/snackdriver/issues"
+  },
+  "homepage": "https://github.com/the-control-group/snackdriver#readme"
+}
