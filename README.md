@@ -1,3 +1,5 @@
+![alt text](SnackDriver.png "Snack Driver")
+
 # snackdriver
 
 A bite-sized bunyan logger with color and a built-in stackdriver stream.
@@ -6,8 +8,8 @@ A bite-sized bunyan logger with color and a built-in stackdriver stream.
 
 ```javascript
 const Logger = require("./log")({
-	containerName: config.containerName,
-	version: config.version,
+	logName: "log-name", // used
+	version: "1.3.10",
 	level: "info"
 });
 

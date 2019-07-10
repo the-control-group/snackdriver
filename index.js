@@ -9,12 +9,12 @@ module.exports = async config => {
 	const bunyan = require("bunyan");
 	const loggingBunyan = new LoggingBunyan({
 		serviceContext: {
-			service: config.containerName,
+			service: config.logName,
 			version: config.version
 		},
-		logName: config.containerName
+		logName: config.logName
 	});
-	const logger = { name: config.containerName };
+	const logger = { name: config.logName };
 	logger.streams = [];
 	if (process.env.NODE_ENV === "production") {
 		// log to Stackdriver Logging
@@ -33,7 +33,7 @@ module.exports = async config => {
 
 	const log = await bunyan.createLogger(logger);
 	const { mw } = await lb.express.middleware({
-		logName: config.containerName
+		logName: config.logName
 	});
 
 	module.log = log;
