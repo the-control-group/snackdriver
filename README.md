@@ -4,7 +4,8 @@ A bite-sized bunyan logger with color and a built-in stackdriver stream.
 
 # Usage
 
-```(async() => {
+```
+(async() => {
 	const { log, log_mw } = await Logger;
 	app.use(log_mw);
 
