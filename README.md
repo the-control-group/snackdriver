@@ -1,4 +1,4 @@
-![alt text](SnackDriver.png "Snack Driver")
+<div style="text-align:center;"><img style="width: 40%; margin: -100px 0 -50px 0;" src="SnackDriver.png" /></div>
 
 # snackdriver
 
