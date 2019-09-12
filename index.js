@@ -1,7 +1,7 @@
 const Bunyan = require("bunyan"),
     { v4: uuidV4 } = require("uuid"),
     { stdout, debugStream, stackdriver } = require("./streams"),
-    responseTime = require('response-time'),;
+    responseTime = require('response-time');
 
 class Logger extends Bunyan {
     /**
