@@ -1,10 +1,11 @@
 {
   "name": "snackdriver",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A bite-sized bunyan logger with color and a built-in stackdriver stream.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example": "NODE_ENV=development node example.js",
+    "test": "jest --verbose --coverage ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
   "dependencies": {
     "@google-cloud/logging-bunyan": "^1.2.1",
     "bunyan": "^1.8.12",
-    "bunyan-debug-stream": "^2.0.0"
+    "bunyan-debug-stream": "^2.0.0",
+    "response-time": "^2.3.2",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "jest-cli": "^24.9.0"
   }
 }
