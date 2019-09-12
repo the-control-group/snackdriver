@@ -1,6 +1,6 @@
 {
   "name": "snackdriver",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A bite-sized bunyan logger with color and a built-in stackdriver stream.",
   "main": "index.js",
   "scripts": {

@@ -6,7 +6,7 @@ A bite-sized bunyan logger with color, express middleware and a built-in stackdr
 
 ### install:
 
-`npm install --save the-control-group/snackdriver#v1.0.0`
+`npm install --save snackdriver`
 
 ### example:
 
