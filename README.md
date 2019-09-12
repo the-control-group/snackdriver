@@ -27,6 +27,18 @@ log.warn("oh no world");
 log.error("ruh roh world");
 ```
 
+### Koa request logging middleware
+
+```javascript
+app.use(log.koaMiddleWare());
+````
+
+### express request logging middleware
+
+```javascript
+app.use(log.expressMiddleWare());
+````
+
 **console output:**  
 ![alt text](console.png "Pretty huh?")
 
