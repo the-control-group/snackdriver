@@ -6,32 +6,25 @@ A bite-sized bunyan logger with color, express middleware and a built-in stackdr
 
 ### install:
 
-`npm install --save the-control-group/snackdriver#v0.0.3`
+`npm install --save the-control-group/snackdriver#v1.0.0`
 
 ### example:
 
 ```javascript
-const Logger = require("./log")({
-	logName: "log-name", // used
-	version: "1.3.10",
-	level: "info"
+const Logger = require("snackdriver");
+const log = new Logger({
+	logName: "test",
+	logStreams: [
+		{env: 'development', stream: 'bunyanDebugStream'},
+		{env: 'development', stream: 'stdout'},
+		{env: 'production', stream: 'stackdriver'},
+	],
+	logLevel: "info"
 });
 
-async () => {
-	const { log, log_mw } = await Logger;
-	app.use(log_mw);
-
-	log.info("hello world");
-	log.warn("oh no world");
-	log.error("ruh roh world");
-
-	// express middleware usage
-	app.use((req, res, next) => {
-		req.log.info("huzzah!");
-
-		next();
-	});
-};
+log.info("hello world");
+log.warn("oh no world");
+log.error("ruh roh world");
 ```
 
 **console output:**  
