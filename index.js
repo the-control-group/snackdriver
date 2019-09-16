@@ -18,13 +18,11 @@ class Logger extends Bunyan {
         environment = process.env.NODE_ENV, // allow optional env overide
         version = "",
     } = {}) {
-        
-        logStreams = logStreams.map(obj => {
-            
-            // only load streams intended for this environment
-            if (environment !== obj.env)
-                return false;
 
+        logStreams = logStreams.filter(obj => {
+            // only load streams intended for this environment
+            return environment === obj.env;
+        }).map(obj => {
             // map streams
             switch(obj.stream) {
                 case 'stdout':
