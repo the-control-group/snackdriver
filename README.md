@@ -15,9 +15,9 @@ const Logger = require("snackdriver");
 const log = new Logger({
 	logName: "test",
 	logStreams: [
-		{env: 'development', stream: 'bunyanDebugStream'},
-		{env: 'development', stream: 'stdout'},
-		{env: 'production', stream: 'stackdriver'},
+		{ env: "development", stream: "bunyanDebugStream" },
+		{ env: "development", stream: "stdout" },
+		{ env: "production", stream: "stackdriver" }
 	],
 	logLevel: "info"
 });
@@ -31,13 +31,13 @@ log.error("ruh roh world");
 
 ```javascript
 app.use(log.koaMiddleWare());
-````
+```
 
 ### express request logging middleware
 
 ```javascript
 app.use(log.expressMiddleWare());
-````
+```
 
 **console output:**  
 ![alt text](console.png "Pretty huh?")
