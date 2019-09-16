@@ -2,9 +2,9 @@ const Logger = require("./index");
 const log = new Logger({
 	logName: "test",
 	logStreams: [
-		{env: 'development', stream: 'bunyanDebugStream'},
-		{env: 'development', stream: 'stdout'},
-		{env: 'development', stream: 'stackdriver'},
+		{ env: "development", stream: "bunyanDebugStream" },
+		{ env: "production", stream: "stdout" },
+		{ env: "production", stream: "stackdriver" }
 	],
 	logLevel: "info"
 });
