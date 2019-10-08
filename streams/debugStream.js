@@ -6,6 +6,7 @@ const debugStream = ({ logLevel }) => {
         type: "raw",
         stream: bunyanDebugStream({
             basepath: __dirname,
+            forceColor: true,
             stringifiers: {
                 request: ({ method, url, body }, { entry }) => {
                     const { response = {} } = entry;
