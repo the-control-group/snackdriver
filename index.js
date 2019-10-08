@@ -8,7 +8,7 @@ class Logger extends Bunyan {
      * Creates a new Logger
      * @param {String} [logName='Pubrec Services API Logger'] name of the logger
      * @param {String} [logStreams=[{env: 'dev', stream: 'stdout'}]] array of stream config objects
-     * @param {String} [logLevel='fatal,error,warn,info,debug,trace'] minimum level of logs to actually log
+     * @param {String} [logLevel='fatal,error,warn,info'] minimum level of logs to actually log
      * @param {String} [version='0.0.1'] used in stackdriver stream 
      */
     constructor({
@@ -20,7 +20,7 @@ class Logger extends Bunyan {
     } = {}) {
 
         logStreams = logStreams.filter(obj => {
-            // only load streams intended for this environment
+            // filter out streams not for this environment
             return environment === obj.env;
         }).map(obj => {
             // map streams
@@ -79,7 +79,7 @@ class Logger extends Bunyan {
     /**
      * Returns express middleware pertaining to the logger
      */
-    middleware() {
+    expressMiddleware() {
         return [
             async (req, res, next) => {
                 req.log = this.child({req_id: uuid.v4()});
