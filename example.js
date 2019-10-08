@@ -12,3 +12,4 @@ const log = new Logger({
 log.info("hello world");
 log.warn("oh no world");
 log.error("ruh roh world");
+log.fatal("you there world?");
