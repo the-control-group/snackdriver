@@ -72,8 +72,8 @@ class Logger extends Bunyan {
 
             response.responseTime = seconds * 1e3 + nanoseconds * 1e-6;
 
-            console.log({ request, response, ctx }, msg);
-            ctx.log.info({ request, response, ctx }, msg);
+            // console.log({ request, responseTime, ctx }, msg);
+            ctx.log.info({ request: msg.request, response: msg.response, ctx:msg.ctx });
         };
     }
 
