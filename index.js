@@ -65,16 +65,14 @@ class Logger extends Bunyan {
             await next();
 
             const [seconds, nanoseconds] = process.hrtime(start),
-                { request, response } = ctx;
-            let msg = `${request.method} ${request.originalUrl} ${
+                { request, response } = ctx,
+                msg = `${request.method} ${request.originalUrl} ${
                     response.status
                 }`;
 
             response.responseTime = seconds * 1e3 + nanoseconds * 1e-6;
 
-            console.log({ request, response, ctx }, msg);
-            msg = JSON.stringify(msg);
-            ctx.log.info(msg);
+            ctx.log.info({ request: msg.request, response: msg.response, ctx: msg.ctx });
         };
     }
 
