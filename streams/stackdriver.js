@@ -7,7 +7,8 @@ const stackdriver = ({ logLevel, logName, version }) => {
             service: logName,
             version: version
         },
-        logName: logName
+        logName: logName,
+        resource: logResource,
     }).stream(logLevel);
 };
 
