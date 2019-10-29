@@ -14,6 +14,7 @@ class Logger extends Bunyan {
     constructor({
         logName = null,
         logStreams = [{env: 'development', stream: 'stdout'}],
+        logResource = { type: "container" },
         logLevel = "info", 
         environment = process.env.NODE_ENV, // allow optional env overide
         version = "",
@@ -32,7 +33,7 @@ class Logger extends Bunyan {
                     return debugStream({ logLevel });
                     break;
                 case 'stackdriver':
-                    return stackdriver({ logLevel, logName, version });
+                    return stackdriver({ logLevel, logName, version, logResource });
                     break;
               default:
                 debugStream({ logLevel });
