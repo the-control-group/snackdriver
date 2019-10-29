@@ -12,7 +12,7 @@ class Logger extends Bunyan {
      * @param {String} [version='0.0.1'] used in stackdriver stream 
      */
     constructor({
-        logName = "Log Name",
+        logName = null,
         logStreams = [{env: 'development', stream: 'stdout'}],
         logLevel = "info", 
         environment = process.env.NODE_ENV, // allow optional env overide
